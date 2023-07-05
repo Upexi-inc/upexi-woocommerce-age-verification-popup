@@ -18,5 +18,7 @@ add_action('wp_footer', 'homepage_popup_render');
 
 function homepage_popup_render() {
     // Code to render the popup goes here
+    if(is_home() || is_front_page()){
     include 'views/public/popup.php';
+    }
 }

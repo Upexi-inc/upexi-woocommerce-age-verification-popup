@@ -1,5 +1,5 @@
 <?php
-    wp_enqueue_style('age_verfiication_styles', plugins_url('../../assets/styles/popup.css', __FILE__), array(), '1.0.0');
+    wp_enqueue_style('age_verification_styles', plugins_url('../../assets/styles/popup.css', __FILE__), array(), '1.0.0');
 ?>
 
 <div id="age-verification-popup">
@@ -10,11 +10,19 @@
 
 <script>
     // JavaScript code to handle the age verification logic
-    document.getElementById('confirm-age').addEventListener('click', function() {
-        //set cookie and/or local storage here
-        document.cookie = 'age_verified=true; path=/';
+
+    // Check if age verification is required
+    if (!localStorage.getItem('age_verified')) {
+        // Show the age verification popup
+        document.getElementById('age-verification-popup').style.display = 'block';
         
-        // Remove the popup from the DOM
-        document.getElementById('age-verification-popup').remove();
-    });
+        // Add event listener to handle verification
+        document.getElementById('confirm-age').addEventListener('click', function() {
+            // Store verification status in local storage
+            localStorage.setItem('age_verified', 'true');
+            console.log('Age verified');
+            // Remove the popup from the DOM
+            document.getElementById('age-verification-popup').style.display = 'none';
+        });
+    }
 </script>
