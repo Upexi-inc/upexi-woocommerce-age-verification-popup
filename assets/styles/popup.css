@@ -9,7 +9,6 @@
     background-color: rgba(0, 0, 0, .5);
     text-align: center;
     z-index: 9999;
-    display:block;
 }
 
 #age-verification-popup.closed {
