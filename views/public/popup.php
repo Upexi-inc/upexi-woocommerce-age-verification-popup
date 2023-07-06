@@ -13,16 +13,15 @@
 
     // Check if age verification is required
     if (!localStorage.getItem('age_verified')) {
-        // Show the age verification popup
         document.getElementById('age-verification-popup').style.display = 'block';
-        
-        // Add event listener to handle verification
         document.getElementById('confirm-age').addEventListener('click', function() {
             // Store verification status in local storage
             localStorage.setItem('age_verified', 'true');
-            console.log('Age verified');
+            
             // Remove the popup from the DOM
             document.getElementById('age-verification-popup').style.display = 'none';
         });
+    } else{
+        document.getElementById('age-verification-popup').style.display = 'none';
     }
 </script>
