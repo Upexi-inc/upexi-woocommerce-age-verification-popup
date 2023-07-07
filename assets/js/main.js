@@ -10,6 +10,9 @@ function setItem(key, value) {
         console.error('Local Storage Set Error: ', error);
     }
 }
+//localStorage.removeItem('age_verified');
+console.log(localStorage.getItem('age_verified'));
+//remove item
 
 // Function to get a value from localStorage
 function getItem(key) {
@@ -33,14 +36,17 @@ function getItem(key) {
     // Function to handle age confirmation
     function handleAgeConfirmation(popup, btn) {
         btn.addEventListener('click', function() {
+            console.log('clicked');
             // Store verification status in local storage
             setItem('age_verified', 'true');
+
+            popup.classList.add('closed');
             
             // Remove the popup from the DOM if it exists and it has 'closed' class
-            if (popup && popup.classList.contains('closed')) {
-                popup.classList.remove('closed');
-                popup.remove();
-            }
+            // if (popup && popup.classList.contains('closed')) {
+            //     popup.classList.remove('closed');
+            //     popup.remove();
+            // }
         });
     }
 
@@ -49,6 +55,7 @@ function getItem(key) {
     const btn = document.getElementById('confirm-age');
     
     if (!getItem('age_verified') && popup && btn) {
+        popup.classList.remove('closed');
         handleAgeConfirmation(popup, btn);
     } else {
         console.warn('Age verification elements not found in the DOM.');
