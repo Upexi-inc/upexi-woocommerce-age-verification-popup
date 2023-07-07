@@ -47,7 +47,7 @@ function getItem(key) {
     // Check if age verification is required
     const popup = document.getElementById('age-verification-popup');
     const btn = document.getElementById('confirm-age');
-    
+    console.log(popup);
     if (!getItem('age_verified') && popup && btn) {
         handleAgeConfirmation(popup, btn);
     } else {
