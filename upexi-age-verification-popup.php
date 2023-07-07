@@ -12,7 +12,7 @@
 
 add_action('wp_footer', 'popup_render');
 
-function upexi_age_verification_scripts() {
+function popup_render() {
     // Code to render the popup goes here
     include(plugin_dir_path(__FILE__) . 'views/public/popup.php');
 }
