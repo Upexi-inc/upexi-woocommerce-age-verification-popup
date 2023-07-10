@@ -1,35 +1,45 @@
 // Helper functions to deal with localStorage
+
 // Function to set a value in localStorage
 function setItem(key, value) {
     try {
+        const now = new Date();
         if (typeof value === 'object') {
             value = JSON.stringify(value);
         }
-        localStorage.setItem(key, value);
+        localStorage.setItem(key, JSON.stringify({value: value, timestamp: now.getTime()}));
     } catch (error) {
         console.error('Local Storage Set Error: ', error);
     }
 }
-//localStorage.removeItem('age_verified');
-console.log(localStorage.getItem('age_verified'));
-//remove item
 
 // Function to get a value from localStorage
 function getItem(key) {
     try {
-        let value = localStorage.getItem(key);
+        let item = localStorage.getItem(key);
         try {
             // Attempt to parse the value as JSON. If it fails, it's a primitive.
-            value = JSON.parse(value);
+            item = JSON.parse(item);
+            const now = new Date();
+            const expiryDate = new Date(item.timestamp + 2 * 7 * 24 * 60 * 60 * 1000); // Add two weeks to the timestamp
+            if (now > expiryDate) {
+                localStorage.removeItem(key);
+                return null;
+            } else {
+                return item.value;
+            }
         } catch (error) {
             // Value is not JSON, do nothing and return it as is
+            return item;
         }
-        return value;
     } catch (error) {
         console.error('Local Storage Get Error: ', error);
         return null;
     }
 }
+
+// Uncomment the line below to remove the 'age_verified' item from localStorage for testing purposes
+//localStorage.removeItem('age_verified');
 
 // JavaScript code to handle the age verification logic
 (function() {
@@ -61,5 +71,3 @@ function getItem(key) {
         console.warn('Age verification elements not found in the DOM.');
     }
 })();
-
-
