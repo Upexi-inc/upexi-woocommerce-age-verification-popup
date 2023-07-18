@@ -53,6 +53,13 @@ function getItem(key) {
     // Check if age verification is required
     const popup = document.getElementById('age-verification-popup');
     const btn = document.getElementById('confirm-age');
+    const deny = document.getElementById('deny-age');
+
+    deny.addEventListener('click', function() {
+        //send the user to bing.com
+        window.location.href = "https://www.bing.com";
+    });
+
     
     if (!getItem('age_verified') && popup && btn) {
         popup.classList.remove('closed');

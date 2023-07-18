@@ -3,5 +3,6 @@
         <h2>Age Verification</h2>
         <p>Please confirm that you are at least 21 years old to access this site.</p>
         <button id="confirm-age">I am 21 or older</button>
+        <button id="deny-age">I am under 21</button>
     </div>
 </div>
