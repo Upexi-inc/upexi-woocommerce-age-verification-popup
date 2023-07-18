@@ -1,5 +1,6 @@
 // Helper functions to deal with localStorage
-// Function to set a value in localStorage
+console.log("userId", userData.userID);
+//localStorage.removeItem('age_verified');
 function setItem(key, value) {
     try {
         if (typeof value === 'object') {
@@ -10,9 +11,6 @@ function setItem(key, value) {
         console.error('Local Storage Set Error: ', error);
     }
 }
-//localStorage.removeItem('age_verified');
-console.log(localStorage.getItem('age_verified'));
-//remove item
 
 // Function to get a value from localStorage
 function getItem(key) {
@@ -31,22 +29,14 @@ function getItem(key) {
     }
 }
 
-// JavaScript code to handle the age verification logic
 (function() {
     // Function to handle age confirmation
     function handleAgeConfirmation(popup, btn) {
         btn.addEventListener('click', function() {
             console.log('clicked');
             // Store verification status in local storage
-            setItem('age_verified', 'true');
-
+            setItem('age_verified', userData.userID);
             popup.classList.add('closed');
-            
-            // Remove the popup from the DOM if it exists and it has 'closed' class
-            // if (popup && popup.classList.contains('closed')) {
-            //     popup.classList.remove('closed');
-            //     popup.remove();
-            // }
         });
     }
 
@@ -55,18 +45,23 @@ function getItem(key) {
     const btn = document.getElementById('confirm-age');
     const deny = document.getElementById('deny-age');
 
+    console.log(getItem('age_verified'), "yoooooo");
+
+    //remove the age_verified item from local storage
+
     deny.addEventListener('click', function() {
         //send the user to bing.com
         window.location.href = "https://www.bing.com";
     });
 
-    
-    if (!getItem('age_verified') && popup && btn) {
-        popup.classList.remove('closed');
-        handleAgeConfirmation(popup, btn);
-    } else {
-        console.warn('Age verification elements not found in the DOM.');
-    }
+    // Check if the current user is the same as the one stored in localStorage
+    if (getItem('age_verified') !== parseInt(userData.userID) || getItem('age_verified') == null) {
+        // If the users are not the same or 'age_verified' is not present, remove the 'closed' class from the popup
+        if (popup && btn) {
+            popup.classList.remove('closed');
+            handleAgeConfirmation(popup, btn);
+        } else {
+            console.warn('Age verification elements not found in the DOM.');
+        }
+    } 
 })();
-
-
