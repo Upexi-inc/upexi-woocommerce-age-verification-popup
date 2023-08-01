@@ -26,15 +26,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 390px;
+    width: 350.08px;
     height: 508px;
     margin-top: 50%;
     margin-bottom: 50%;
 }
 
 .img-container {
-    width: 100%;
-    height: 40%;
+    width: 350.08px;
+    height: 194.21631px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -47,7 +47,10 @@
 
 #age-verification-popup .img-container img {
     position: absolute;
-    top: -34.5px; /* adjust this value to get the desired effect */
+    top: -32.5px; /* adjust this value to get the desired effect */
+    width: 317.459px;
+    height: 221.279px;
+    flex-shrink: 0;
 }
 
 .popup-lower{
@@ -58,23 +61,29 @@
     justify-content: center;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    height: 60%;
+    height: 287.345px;
+    width: 350.08px;
 }
 
 .popup-lower h2 {
     color: #0A215A;
-    margin-top: 20px;
     font-family: 'Fresno', sans-serif;
-    font-size: 32px;
+    font-size: 33.588px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 95%;
+    margin-top: 26.27px;
 }
 
 .popup-lower p {
     color: #0A215A;
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    font-size: 12px;
-    margin-left: 50px;
-    margin-right: 50px;
+    font-size: 13px;
+    margin-left: 58.08px;
+    margin-right: 58.08px;
+    margin-bottom: 4.95px;
+    font-stretch: condensed;
 }
 
 #age-verification-popup button {
@@ -88,7 +97,7 @@
     border-radius: 50px;
     border: none;
     margin-bottom: 10px;
-    box-shadow: 0 9px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 9px 20px rgba(0, 0, 0, 0.2);
 }
 
 #age-verification-popup button:hover {
