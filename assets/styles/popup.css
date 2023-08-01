@@ -8,10 +8,10 @@
     align-items: center;
     justify-content: center;
     -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
     background-color: rgba(0, 0, 0, .5);
     text-align: center;
-    z-index: 9999;
+    z-index: 99999;
 }
 
 #age-verification-popup.closed {
@@ -21,29 +21,86 @@
 #age-verification-popup .container {
     padding: 20px;
     border-radius:4px;
-    background-color:white;
+    background-color:transparent;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 390px;
+    height: 508px;
+    margin-top: 50%;
+    margin-bottom: 50%;
 }
 
-#age-verification-popup h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
+.img-container {
+    width: 100%;
+    height: 40%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-size: cover; /* makes the background image cover the entire div */
+    background-position: center; /* centers the background image */
+    overflow: visible;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
-#age-verification-popup p {
-    font-size: 16px;
-    margin-bottom: 20px;
+#age-verification-popup .img-container img {
+    position: absolute;
+    top: -34.5px; /* adjust this value to get the desired effect */
+}
+
+.popup-lower{
+    background-color: #FAFBFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 60%;
+}
+
+.popup-lower h2 {
+    color: #0A215A;
+    margin-top: 20px;
+    font-family: 'Fresno', sans-serif;
+    font-size: 32px;
+}
+
+.popup-lower p {
+    color: #0A215A;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 12px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 #age-verification-popup button {
-    background-color: #000;
-    color: #fff;
-    padding: 10px 20px;
+    width: 248.24px;
+    height: 47.76px;
+    font-family: 'Saira', sans-serif;
+    font-weight: bold;
+    font-size: 11.32px;
+    line-height: 18.4px;
+    letter-spacing: 1.42px;
+    border-radius: 50px;
     border: none;
+    margin-bottom: 10px;
+    box-shadow: 0 9px 12px rgba(0, 0, 0, 0.2);
+}
+
+#age-verification-popup button:hover {
     cursor: pointer;
-    margin: 5px;
-    border-radius: 4px;
+}
+
+#confirm-age {
+    background: linear-gradient(to right, #5A3BA4, #4364DA, #4BBEFE);
+    color: white;
+}
+
+#deny-age{
+    background-color: #FFFFFF;
+    color: #5D6076;
 }

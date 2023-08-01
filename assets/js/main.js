@@ -1,6 +1,6 @@
 // Helper functions to deal with localStorage
 console.log("userId", userData.userID);
-//localStorage.removeItem('age_verified');
+localStorage.removeItem('age_verified');
 function setItem(key, value) {
     try {
         if (typeof value === 'object') {
