@@ -1,5 +1,4 @@
 // Helper functions to deal with localStorage
-console.log("userId", userData.userID);
 localStorage.removeItem('age_verified');
 function setItem(key, value) {
     try {
@@ -44,8 +43,6 @@ function getItem(key) {
     const popup = document.getElementById('age-verification-popup');
     const btn = document.getElementById('confirm-age');
     const deny = document.getElementById('deny-age');
-
-    console.log(getItem('age_verified'), "yoooooo");
 
     //remove the age_verified item from local storage
 

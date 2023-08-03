@@ -8,13 +8,15 @@
         <div class="popup-lower">
             <h2>WAIT! Before we take off...</h2>
             <div class="age-disclaimer">
-            <p>Please confirm that you are at least 21 years old to access this site.</p>
+                <p>Please confirm that you are at least 21 years old to access this site.</p>
             </div>
             <button id="confirm-age">I AM 21 YEARS OR OLDER</button>
             <button id="deny-age">I AM UNDER 21 YEARS OLD</button>
             <span>
-                <a href="https://www.bing.com" target="_blank">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.bing.com" target="_blank">Terms of Service</a>
+                <a href="<?php echo esc_url(get_privacy_policy_url()); ?>" target="_blank">Privacy Policy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="<?php echo esc_url(get_permalink(121)); ?>" target="_blank">Terms of Service</a>
             </span>
+
         </div>
     </div>
 
