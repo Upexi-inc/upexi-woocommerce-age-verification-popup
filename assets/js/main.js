@@ -1,5 +1,5 @@
 // Helper functions to deal with localStorage
-localStorage.removeItem('age_verified');
+//localStorage.removeItem('age_verified');
 function setItem(key, value) {
     try {
         if (typeof value === 'object') {
@@ -32,7 +32,6 @@ function getItem(key) {
     // Function to handle age confirmation
     function handleAgeConfirmation(popup, btn) {
         btn.addEventListener('click', function() {
-            console.log('clicked');
             // Store verification status in local storage
             setItem('age_verified', userData.userID);
             popup.classList.add('closed');
