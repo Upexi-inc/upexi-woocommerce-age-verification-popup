@@ -1,9 +1,9 @@
-<?php $background_url = plugins_url('upexi-age-verification-popup/assets/images/Rectangle-popup.png'); ?>
+<?php $background_url = plugins_url('upexi-age-verification-popup/assets/images/Rectangle-popup.webp'); ?>
 <link href="https://fonts.cdnfonts.com/css/roboto-condensed" rel="stylesheet">
 <div id="age-verification-popup" class="closed">
     <div class="container">
         <div class="img-container" style="background-image: url('<?php echo $background_url; ?>')">
-            <img src="<?php echo plugins_url('upexi-age-verification-popup/assets/images/astronaut.png'); ?>" alt="Upexi Logo">
+            <img src="<?php echo plugins_url('upexi-age-verification-popup/assets/images/astronaut.webp'); ?>" alt="Upexi Logo">
         </div>
         <div class="popup-lower">
             <h2>WAIT! Before we take off...</h2>
