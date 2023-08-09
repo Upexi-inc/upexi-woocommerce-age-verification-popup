@@ -1,6 +1,6 @@
 # Upexi Age Verification Popup for WooCommerce
 ## Description
-The Upexi Age Verification Popup for WooCommerce is a WordPress plugin designed to display a customizable popup to verify the age of users visiting your WooCommerce site. The popup will ask users to confirm that they are at least 21 years old to access the site.
+The Upexi Age Verification Popup for WooCommerce is a WordPress plugin designed to display a customizable popup to verify the age of users visiting Upexi's WooCommerce sites. The popup will ask users to confirm that they are at least 21 years old to access the site.
 
 ## Features
 Customizable Popup: Easily modify the appearance of the popup by editing the included CSS file.
